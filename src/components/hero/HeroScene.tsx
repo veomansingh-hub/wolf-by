@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { HeroTypography } from './HeroTypography';
 import { FilmGrain } from './FilmGrain';
 
@@ -13,8 +12,6 @@ import { FilmGrain } from './FilmGrain';
  * Retained film grain for cinematic texture and banding reduction.
  */
 export function HeroScene() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
     <section 
       className="relative h-[100svh] w-full overflow-hidden bg-void"
@@ -32,10 +29,7 @@ export function HeroScene() {
         loop
         muted
         playsInline
-        onCanPlay={() => setIsVideoLoaded(true)}
-        className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-          isVideoLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-100"
       >
         <source src="/video/wolf-hero.mp4" type="video/mp4" />
       </video>
