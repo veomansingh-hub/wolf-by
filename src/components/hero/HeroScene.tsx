@@ -1,27 +1,19 @@
 'use client';
 
-import { useRef } from 'react';
-import dynamic from 'next/dynamic';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { useState } from 'react';
 import { HeroTypography } from './HeroTypography';
-import { FogOverlay } from './FogOverlay';
 import { FilmGrain } from './FilmGrain';
 
-// Dynamic import for ParticleCanvas — no SSR needed for canvas
-const ParticleCanvas = dynamic(
-  () => import('./ParticleCanvas').then((mod) => ({ default: mod.ParticleCanvas })),
-  { ssr: false }
-);
-
 /**
- * HeroScene - Video First Architecture
+ * HeroScene - Premium Video Hero
  *
- * A clean, premium fullscreen video hero.
- * Removed all scroll-narrative pinning and CSS placeholder dependencies.
- * The focus is 100% on presenting the cinematic wolf video perfectly.
+ * Integrated with the final real wolf video.
+ * Kept strictly minimal to let the footage breathe.
+ * Removed artificial CSS fog and particles as they clash with real footage.
+ * Retained film grain for cinematic texture and banding reduction.
  */
 export function HeroScene() {
-  const prefersReducedMotion = useReducedMotion();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   return (
     <section 
@@ -30,32 +22,33 @@ export function HeroScene() {
     >
       {/* 
         Background Video 
-        - playsInline is critical for iOS mobile to prevent native player takeover
-        - object-cover ensures no awkward cropping
+        - playsInline: Prevents iOS fullscreen takeover
+        - object-cover: Ensures fullscreen without squishing
+        - object-center: Keeps the wolf centered on both desktop and mobile
+        - opacity transition: Prevents black flash while loading
       */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        poster="/video/wolf-hero-poster.webp"
-        className="absolute inset-0 h-full w-full object-cover"
+        onCanPlay={() => setIsVideoLoaded(true)}
+        className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+          isVideoLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
       >
         <source src="/video/wolf-hero.mp4" type="video/mp4" />
-        <source src="/video/wolf-hero.webm" type="video/webm" />
       </video>
 
       {/* ─── Visual Support Overlays ─── */}
       
-      {/* 1. Dark overlay for baseline contrast */}
-      <div className="pointer-events-none absolute inset-0 bg-void/40" />
+      {/* 1. Very soft dark overlay for baseline text contrast (reduced from 40% to 20% to let video shine) */}
+      <div className="pointer-events-none absolute inset-0 bg-void/20" />
 
-      {/* 2. Soft vignette to draw focus to the center subject */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(5,10,5,0.85)_100%)]" />
+      {/* 2. Soft vignette to draw focus to the wolf and darken edges for framing */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(5,10,5,0.7)_100%)]" />
 
-      {/* 3. Subtle atmospheric effects */}
-      <FogOverlay />
-      <ParticleCanvas />
+      {/* 3. Film grain retained for cinematic texture and compression artifact masking */}
       <FilmGrain />
 
       {/* ─── Minimal Text Overlay ─── */}
