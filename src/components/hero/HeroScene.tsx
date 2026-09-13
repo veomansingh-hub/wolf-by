@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { gsap, ScrollTrigger } from '@/lib/gsap-register';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { ParallaxLayers } from './ParallaxLayers';
+import { WolfSequence } from './WolfSequence';
 import { HeroTypography } from './HeroTypography';
 import { FogOverlay } from './FogOverlay';
 import { FilmGrain } from './FilmGrain';
@@ -28,6 +29,20 @@ const ParticleCanvas = dynamic(
  *   80% – 100%: Typography fades out. Wolf reaches close-up. Scene dims.
  *
  * The section itself is 400vh tall; the visible viewport is pinned for 300vh.
+ *
+ * ANIMATION TARGETS:
+ *   [data-parallax="back"]  — background forest layer
+ *   [data-parallax="mid"]   — midground trees layer
+ *   [data-parallax="wolf"]  — wolf sequence layer (WolfSequence)
+ *   [data-parallax="front"] — foreground vignette layer
+ *   .wolf-asset             — wolf element (CSS placeholder or canvas)
+ *   .wolf-eye               — wolf eye glint (CSS placeholder only)
+ *   .hero-typography        — typography container
+ *   .scroll-indicator       — scroll cue
+ *
+ *   These selectors work regardless of whether placeholders or
+ *   production assets are active. Do not rename them without updating
+ *   the timeline below.
  */
 export function HeroScene() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,6 +63,7 @@ export function HeroScene() {
       const frontLayer = pin.querySelector('[data-parallax="front"]') as HTMLElement;
       const wolfAsset = pin.querySelector('.wolf-asset') as HTMLElement;
       const wolfEye = pin.querySelector('.wolf-eye') as HTMLElement;
+      const wolfCanvas = wolfAsset?.querySelector('canvas') as HTMLCanvasElement | null;
       const typography = pin.querySelector('.hero-typography') as HTMLElement;
       const scrollIndicator = pin.querySelector('.scroll-indicator') as HTMLElement;
 
@@ -96,12 +112,22 @@ export function HeroScene() {
       if (wolfAsset) {
         masterTl.to(
           wolfAsset,
-          {
-            opacity: 0.7,
-            duration: 15,
-            ease: 'power2.out',
-          },
+          { opacity: 0.7, duration: 15, ease: 'power2.out' },
           15
+        );
+      }
+
+      // If image sequence canvas exists, scrub frames across the full timeline
+      if (wolfCanvas) {
+        masterTl.to(
+          wolfCanvas,
+          {
+            attr: { 'data-frame': 239 }, // 0-based last frame
+            duration: 95, // spans most of the timeline
+            ease: 'none',
+            snap: { attr: { 'data-frame': 1 } }, // snap to integer frames
+          },
+          0
         );
       }
 
@@ -126,13 +152,7 @@ export function HeroScene() {
       if (wolfAsset) {
         masterTl.to(
           wolfAsset,
-          {
-            scale: 2.2,
-            opacity: 1,
-            y: '-10%',
-            duration: 30,
-            ease: 'power1.inOut',
-          },
+          { scale: 2.2, opacity: 1, y: '-10%', duration: 30, ease: 'power1.inOut' },
           40
         );
       }
@@ -151,7 +171,7 @@ export function HeroScene() {
         40
       );
 
-      // Wolf eye glows
+      // Wolf eye glows (placeholder-only; harmless no-op if element absent)
       if (wolfEye) {
         masterTl.to(
           wolfEye,
@@ -169,13 +189,7 @@ export function HeroScene() {
       if (typography) {
         masterTl.to(
           typography,
-          {
-            opacity: 0,
-            y: -60,
-            scale: 0.97,
-            duration: 20,
-            ease: 'power2.in',
-          },
+          { opacity: 0, y: -60, scale: 0.97, duration: 20, ease: 'power2.in' },
           60
         );
       }
@@ -184,12 +198,7 @@ export function HeroScene() {
       if (wolfAsset) {
         masterTl.to(
           wolfAsset,
-          {
-            scale: 4,
-            y: '-20%',
-            duration: 25,
-            ease: 'power2.in',
-          },
+          { scale: 4, y: '-20%', duration: 25, ease: 'power2.in' },
           70
         );
       }
@@ -204,11 +213,7 @@ export function HeroScene() {
       // Overall scene darkening at end
       masterTl.to(
         pin,
-        {
-          '--scene-darkness': 0.7,
-          duration: 15,
-          ease: 'power2.in',
-        },
+        { '--scene-darkness': 0.7, duration: 15, ease: 'power2.in' },
         80
       );
     }, sectionRef);
@@ -238,14 +243,13 @@ export function HeroScene() {
           {/* Dark overlay driven by CSS custom property */}
           <div
             className="pointer-events-none absolute inset-0 z-50 bg-void transition-none"
-            style={{
-              opacity: 'var(--scene-darkness)',
-            }}
+            style={{ opacity: 'var(--scene-darkness)' }}
             aria-hidden="true"
           />
 
-          {/* Scene layers */}
+          {/* Scene layers — ordered by z-index, not DOM order */}
           <ParallaxLayers />
+          <WolfSequence />
           <FogOverlay />
           <ParticleCanvas />
           <HeroTypography />
