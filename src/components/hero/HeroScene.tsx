@@ -36,13 +36,7 @@ export function HeroScene() {
 
       {/* ─── Visual Support Overlays ─── */}
       
-      {/* 1. Very soft dark overlay for baseline text contrast (reduced from 40% to 20% to let video shine) */}
-      <div className="pointer-events-none absolute inset-0 bg-void/20" />
-
-      {/* 2. Soft vignette to draw focus to the wolf and darken edges for framing */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(5,10,5,0.7)_100%)]" />
-
-      {/* 3. Film grain retained for cinematic texture and compression artifact masking */}
+      {/* Film grain retained for cinematic texture and compression artifact masking */}
       <FilmGrain />
 
       {/* ─── Minimal Text Overlay ─── */}
