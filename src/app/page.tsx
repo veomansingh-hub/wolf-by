@@ -7,7 +7,7 @@ export default function Home() {
       <HeroScene />
       
       {/* SECTION 2 — INTRODUCTION */}
-      <section className="bg-ivory px-6 py-32 md:px-12 md:py-48 text-charcoal">
+      <section className="bg-ivory px-6 py-20 md:py-32 md:px-12 md:py-32 text-charcoal">
         <div className="mx-auto max-w-[1600px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           <div>
             <h2 
@@ -33,9 +33,9 @@ export default function Home() {
       </section>
 
       {/* SECTION 3 — DESTINATIONS */}
-      <section className="bg-stone px-6 py-32 md:px-12 text-charcoal">
+      <section className="bg-stone px-6 py-20 md:py-32 md:px-12 text-charcoal">
         <div className="mx-auto max-w-[1600px]">
-          <h2 className="font-serif text-4xl md:text-5xl mb-16 max-w-2xl">
+          <h2 className="font-serif text-3xl md:text-5xl mb-16 max-w-2xl">
             PLACES THAT <span className="italic">STILL FEEL WILD.</span>
           </h2>
           
@@ -77,9 +77,9 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 — SAFARI TYPES */}
-      <section className="bg-ivory px-6 py-32 md:px-12">
+      <section className="bg-ivory px-6 py-20 md:py-32 md:px-12">
         <div className="mx-auto max-w-[1600px]">
-          <h2 className="font-serif text-4xl md:text-5xl mb-16 text-charcoal">
+          <h2 className="font-serif text-3xl md:text-5xl mb-16 text-charcoal">
             HOW DO YOU <span className="italic">WANT TO GO WILD?</span>
           </h2>
           <div className="flex flex-col border-t border-charcoal/20">
@@ -104,12 +104,12 @@ export default function Home() {
       </section>
 
       {/* SECTION 5 — FEATURED EXPERIENCE */}
-      <section className="bg-void text-ivory py-32 px-6 md:px-12 relative overflow-hidden">
+      <section className="bg-void text-ivory py-20 md:py-32 px-6 md:px-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1502472581566-8a9d18b2c451?q=80&w=2500&auto=format&fit=crop')] bg-cover bg-center mix-blend-luminosity"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-void via-void/80 to-transparent"></div>
         <div className="mx-auto max-w-[1600px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-serif text-5xl md:text-7xl leading-none mb-8">
+            <h2 className="font-serif text-4xl md:text-7xl leading-none mb-8">
               AT DAWN,<br />
               <span className="italic text-fog">THE LANDSCAPE CHANGES.</span>
             </h2>
@@ -133,28 +133,28 @@ export default function Home() {
       </section>
 
       {/* SECTION 6 & 7 — WHY LUPA NOIR / TRUST */}
-      <section className="bg-ivory px-6 py-32 md:px-12">
+      <section className="bg-ivory px-6 py-20 md:py-32 md:px-12">
         <div className="mx-auto max-w-[1600px] grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
-            <h2 className="font-serif text-4xl md:text-5xl mb-12 text-charcoal leading-tight">
+            <h2 className="font-serif text-3xl md:text-5xl mb-12 text-charcoal leading-tight">
               LESS TOUR.<br />
               <span className="italic">MORE WILDERNESS.</span>
             </h2>
             <div className="grid grid-cols-2 gap-12 font-serif text-charcoal">
               <div>
-                <span className="block text-5xl mb-2">100%</span>
+                <span className="block text-3xl md:text-5xl mb-2">100%</span>
                 <span className="block font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60">Private Safaris</span>
               </div>
               <div>
-                <span className="block text-5xl mb-2">LOCAL</span>
+                <span className="block text-3xl md:text-5xl mb-2">LOCAL</span>
                 <span className="block font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60">Expert Guides</span>
               </div>
               <div>
-                <span className="block text-5xl mb-2">TAILORED</span>
+                <span className="block text-3xl md:text-5xl mb-2">TAILORED</span>
                 <span className="block font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60">Every Journey</span>
               </div>
               <div>
-                <span className="block text-5xl mb-2">24/7</span>
+                <span className="block text-3xl md:text-5xl mb-2">24/7</span>
                 <span className="block font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60">Trip Support</span>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 9 — RESPONSIBLE WILDLIFE */}
-      <section className="bg-stone px-6 py-32 md:px-12 text-center">
+      <section className="bg-stone px-6 py-20 md:py-32 md:px-12 text-center">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl md:text-5xl text-charcoal leading-tight mb-10">
             THE SIGHTING IS NEVER WORTH<br />
@@ -190,10 +190,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 11 — JOURNAL */}
-      <section className="bg-ivory px-6 py-32 md:px-12">
+      <section className="bg-ivory px-6 py-20 md:py-32 md:px-12">
         <div className="mx-auto max-w-[1600px]">
           <div className="flex items-end justify-between mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal">
+            <h2 className="font-serif text-3xl md:text-5xl text-charcoal">
               FIELD NOTES
             </h2>
             <Link href="/journal" className="hidden md:inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-copper hover:text-charcoal transition-colors">
@@ -220,10 +220,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 12 — PLAN YOUR SAFARI */}
-      <section className="bg-charcoal text-ivory px-6 py-32 md:px-12 border-b border-ivory/10">
+      <section className="bg-charcoal text-ivory px-6 py-20 md:py-32 md:px-12 border-b border-ivory/10">
         <div className="mx-auto max-w-[1600px] grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-serif text-5xl md:text-7xl leading-[1.1] mb-8">
+            <h2 className="font-serif text-4xl md:text-7xl leading-[1.1] mb-8">
               WHERE DO YOU<br />
               <span className="italic text-copper">WANT TO GO?</span>
             </h2>

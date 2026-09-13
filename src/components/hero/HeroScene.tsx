@@ -29,7 +29,7 @@ export function HeroScene() {
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-100"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center opacity-100"
       >
         <source src="/video/wolf-hero.mp4" type="video/mp4" />
       </video>
