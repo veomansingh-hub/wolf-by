@@ -18,7 +18,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // We only create the audio object on the client
-    const audio = new Audio('/audio/ambient.mp3');
+    const audio = new Audio('/audio/ambient.ogg');
     audio.loop = true;
     audio.volume = 0; // start silent
     audioRef.current = audio;
