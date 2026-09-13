@@ -2,8 +2,12 @@
 
 /* ─── Custom Theme ─── */
 @theme inline {
+  --color-ivory: #f9f8f6;
+  --color-stone: #ecebe8;
+  --color-charcoal: #141414;
+  --color-copper: #c48b5d;
+  
   --color-void: #0a0a0a;
-  --color-charcoal: #1a1a1a;
   --color-forest-dark: #0d1f0d;
   --color-forest-mid: #1a3a1a;
   --color-moss: #2d4a2d;
@@ -17,13 +21,13 @@
 
 /* ─── Base ─── */
 html {
-  background-color: var(--color-void);
-  color: var(--color-bone);
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
   overflow-x: hidden;
 }
 
 body {
-  background-color: var(--color-void);
+  background-color: var(--color-ivory);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

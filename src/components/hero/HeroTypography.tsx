@@ -3,14 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from '@/lib/gsap-register';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import Link from 'next/link';
 
-/**
- * HeroTypography - Minimal Version
- *
- * Reduced to extreme simplicity so it doesn't distract from the video hero.
- * No scroll-scrubbing, no individual word clips.
- * Just a clean, elegant fade-in at the bottom center.
- */
 export function HeroTypography() {
   const containerRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -18,32 +12,70 @@ export function HeroTypography() {
   useEffect(() => {
     if (prefersReducedMotion || !containerRef.current) return;
 
-    // Simple elegant fade-in after a short delay
+    // Staggered fade in for premium feel
+    const elements = containerRef.current.children;
     gsap.fromTo(
-      containerRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1.5, delay: 0.5, ease: 'power2.out' }
+      elements,
+      { opacity: 0, y: 15 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2, 
+        stagger: 0.15, 
+        delay: 0.6, 
+        ease: 'power2.out' 
+      }
     );
   }, [prefersReducedMotion]);
 
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none absolute bottom-[10%] left-0 right-0 z-40 flex flex-col items-center justify-center px-6 text-center"
+      className="absolute inset-0 z-40 flex flex-col justify-center px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto pointer-events-none"
       style={{ opacity: prefersReducedMotion ? 1 : 0 }}
     >
+      {/* Small intro label */}
+      <div className="mb-6 font-sans text-[10px] sm:text-xs tracking-[0.2em] uppercase text-bone/80 pointer-events-auto">
+        Private Wildlife Journeys
+      </div>
+
+      {/* Main Headline */}
       <h1 
-        className="hero-title mb-4 font-serif text-bone"
-        style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+        className="mb-8 font-serif text-bone leading-[0.95]"
+        style={{ fontSize: 'clamp(3rem, 7vw, 6.5rem)' }}
       >
-        WILD BY <span className="text-ember/90">NATURE</span>
+        WILD BY <br />
+        <span className="text-ember/90 italic">NATURE</span>
       </h1>
+
+      {/* Description */}
       <p 
-        className="hero-subtitle mx-auto max-w-md text-fog/80"
-        style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)' }}
+        className="mb-10 max-w-md font-sans text-fog/90 leading-relaxed pointer-events-auto"
+        style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.125rem)' }}
       >
-        Some things were never meant to be tamed.
+        Private safaris designed around wildlife, landscape and the freedom to explore slowly.
       </p>
+
+      {/* CTAs */}
+      <div className="mb-16 flex flex-col sm:flex-row gap-6 pointer-events-auto">
+        <Link 
+          href="/plan" 
+          className="inline-flex h-12 items-center justify-center bg-bone px-8 font-sans text-xs uppercase tracking-widest text-void transition-colors hover:bg-ivory"
+        >
+          Plan Your Safari
+        </Link>
+        <Link 
+          href="/destinations" 
+          className="inline-flex h-12 items-center justify-center border border-bone/30 px-8 font-sans text-xs uppercase tracking-widest text-bone transition-colors hover:bg-bone/10"
+        >
+          Explore Destinations
+        </Link>
+      </div>
+
+      {/* Trust Line */}
+      <div className="font-sans text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-fog/60 pointer-events-auto">
+        Private Safaris &nbsp;&middot;&nbsp; Expert Guides &nbsp;&middot;&nbsp; Tailored Journeys
+      </div>
     </div>
   );
 }
