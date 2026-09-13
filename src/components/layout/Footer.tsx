@@ -53,9 +53,14 @@ export function Footer() {
 
         {/* Bottom line */}
         <div className="pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-sans text-xs text-fog/50">
-            &copy; {new Date().getFullYear()} Lupa Noir. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+            <p className="font-sans text-xs text-fog/50">
+              &copy; {new Date().getFullYear()} Lupa Noir. All rights reserved.
+            </p>
+            <p className="font-sans text-xs text-fog/50">
+              Designed by Theomedia
+            </p>
+          </div>
           <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-ember/90">
             Wild by Nature.
           </p>
