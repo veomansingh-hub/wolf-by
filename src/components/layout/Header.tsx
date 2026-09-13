@@ -20,10 +20,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-[100] transition-colors duration-500 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-500 text-charcoal ${
           scrolled
-            ? 'bg-ivory/90 text-charcoal backdrop-blur-md border-b border-stone'
-            : 'bg-transparent text-bone'
+            ? 'bg-ivory/80 backdrop-blur-md border-b border-charcoal/5'
+            : 'bg-transparent py-4'
         }`}
       >
         <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 md:px-12">
