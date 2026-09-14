@@ -57,7 +57,7 @@ export default function Home() {
             {/* Destination 1 - Large Left */}
             <Link href="/destinations" className="lg:col-span-7 group relative block aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-void/5 reveal-up" aria-label="Explore Jawai, India">
               <Image 
-                src="https://images.unsplash.com/photo-1547471080-7fc2caa6f17f?q=80&w=2000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=2000&auto=format&fit=crop" 
                 alt="Leopard resting in Jawai, India" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -94,7 +94,7 @@ export default function Home() {
               {/* Destination 3 */}
               <Link href="/destinations" className="group relative block flex-1 overflow-hidden bg-void/5 min-h-[400px] reveal-up" aria-label="Explore Okavango Delta">
                 <Image 
-                  src="https://images.unsplash.com/photo-1579298418047-920f3ee824c0?q=80&w=1500&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=1500&auto=format&fit=crop" 
                   alt="Elephant in the Okavango Delta" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -146,7 +146,7 @@ export default function Home() {
       {/* SECTION 5 — FEATURED EXPERIENCE (Full Bleed Cinematic) */}
       <section className="bg-charcoal text-ivory py-32 md:py-48 px-6 md:px-12 relative overflow-hidden" aria-labelledby="experience-heading">
         <Image 
-          src="https://images.unsplash.com/photo-1502472581566-8a9d18b2c451?q=80&w=2500&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2500&auto=format&fit=crop"
           alt="Lions resting in the tall grass during a morning safari"
           fill
           sizes="100vw"
