@@ -5,6 +5,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { SoundProvider } from "@/components/providers/SoundProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { TheomediaBadge } from "@/components/ui/TheomediaBadge";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <TheomediaBadge />
           </SoundProvider>
         </SmoothScrollProvider>
       </body>

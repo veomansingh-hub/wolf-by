@@ -55,9 +55,9 @@ export function Footer() {
             <p className="font-sans text-[10px] text-ivory/40 tracking-widest uppercase">
               &copy; {new Date().getFullYear()} Lupa Noir.
             </p>
-            <p className="font-sans text-[10px] text-ivory/30 tracking-widest uppercase">
+            <a href="mailto:contact@theomedia.co.uk?subject=Website%20Design%20Enquiry%20(Lupa%20Noir%20Concept)" className="font-sans text-[10px] text-ivory/40 hover:text-copper transition-colors tracking-widest uppercase focus:outline-none focus:text-copper">
               Design concept by Theomedia UK
-            </p>
+            </a>
           </div>
           
           <div className="flex items-center gap-6">

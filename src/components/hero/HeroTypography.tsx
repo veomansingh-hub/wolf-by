@@ -57,7 +57,7 @@ export function HeroTypography() {
           style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.125rem)' }}
         >
           Private safaris designed around wildlife, landscape and the freedom to explore slowly.
-        </p>
+        </a>
 
         {/* CTAs */}
         <div className="mb-10 md:mb-16 flex flex-col sm:flex-row gap-4 md:gap-6 pointer-events-auto">
@@ -82,10 +82,13 @@ export function HeroTypography() {
       </div>
 
       {/* Design Concept Credit (Bottom Left) */}
-      <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 z-40 pointer-events-none">
-        <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-charcoal/60 font-semibold">
+      <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 z-40 pointer-events-auto">
+        <a 
+          href="mailto:contact@theomedia.co.uk?subject=Website%20Design%20Enquiry"
+          className="font-sans text-[9px] tracking-[0.2em] uppercase text-charcoal/60 hover:text-charcoal font-semibold transition-colors"
+        >
           Design concept by Theomedia UK
-        </p>
+        </a>
       </div>
     </>
   );
