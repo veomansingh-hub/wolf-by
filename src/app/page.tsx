@@ -229,7 +229,7 @@ export default function Home() {
       {/* SECTION 9 — RESPONSIBLE WILDLIFE (Statement) */}
       <section className="bg-stone px-6 py-32 md:py-48 md:px-12 text-center relative overflow-hidden" aria-labelledby="responsible-heading">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none" aria-hidden="true">
-          <span className="font-serif text-[18vw] leading-none whitespace-nowrap text-charcoal tracking-tight">THEOMEDIA UK</span>
+          <span className="font-serif text-[18vw] leading-none whitespace-nowrap text-charcoal tracking-tight">THEOMEDIA</span>
         </div>
         <div className="mx-auto max-w-4xl relative z-10 reveal-up">
           <div className="w-px h-16 bg-copper mx-auto mb-12 reveal-line" aria-hidden="true" />

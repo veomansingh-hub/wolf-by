@@ -84,10 +84,12 @@ export function HeroTypography() {
       {/* Design Concept Credit (Bottom Left) */}
       <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 z-40 pointer-events-auto">
         <a 
-          href="mailto:contact@theomedia.co.uk?subject=Website%20Design%20Enquiry"
+          href="https://www.theomedia.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-sans text-[9px] tracking-[0.2em] uppercase text-charcoal/60 hover:text-charcoal font-semibold transition-colors"
         >
-          Design concept by Theomedia UK
+          Built by TheoMedia
         </a>
       </div>
     </>
