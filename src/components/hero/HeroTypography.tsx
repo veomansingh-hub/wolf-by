@@ -57,7 +57,7 @@ export function HeroTypography() {
           style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.125rem)' }}
         >
           Private safaris designed around wildlife, landscape and the freedom to explore slowly.
-        </a>
+        </p>
 
         {/* CTAs */}
         <div className="mb-10 md:mb-16 flex flex-col sm:flex-row gap-4 md:gap-6 pointer-events-auto">
