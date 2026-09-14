@@ -2,68 +2,68 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-bone px-6 py-20 md:px-12 md:py-32">
+    <footer className="bg-charcoal text-ivory pt-24 pb-12 px-6 md:px-12" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto max-w-[1600px]">
-        {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b border-stone/20 pb-20">
+        
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-24">
           
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <h2 className="font-serif text-2xl tracking-widest uppercase mb-2">
-              Lupa Noir
-            </h2>
-            <h3 className="font-sans text-[10px] tracking-[0.2em] uppercase opacity-70 mb-8">
-              Wildlife Expeditions
-            </h3>
-            <p className="font-serif italic text-fog/80 max-w-sm" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)' }}>
-              Private journeys into the world's untamed places.
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <Link href="/" className="inline-block mb-8 focus:outline-none focus:ring-2 focus:ring-copper" aria-label="Lupa Noir Home">
+              <span className="font-serif text-3xl tracking-widest text-ivory">LUPA NOIR</span>
+              <span className="block font-sans text-[8px] uppercase tracking-[0.3em] text-copper mt-2">Wildlife Expeditions</span>
+            </Link>
+            <p className="font-sans text-sm text-ivory/60 max-w-sm leading-relaxed font-light mb-8">
+              Private journeys into the world's untamed places. We design exceptional wildlife encounters for those who seek the extraordinary.
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="font-sans text-xs font-bold tracking-widest uppercase mb-8">Explore</h4>
-            <nav className="flex flex-col gap-4 font-sans text-sm text-fog hover:[&>a]:text-bone [&>a]:transition-colors">
-              <Link href="/destinations">Destinations</Link>
-              <Link href="/safaris">Safaris</Link>
-              <Link href="/experiences">Experiences</Link>
-              <Link href="/about">About</Link>
-              <Link href="/journal">Journal</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
-          </div>
+          {/* Navigation Links */}
+          <nav className="lg:col-span-2 lg:col-start-7 flex flex-col gap-4" aria-label="Footer Navigation - Explore">
+            <h3 className="font-sans text-[10px] uppercase tracking-[0.2em] text-copper mb-4 font-semibold">Explore</h3>
+            <Link href="/destinations" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Destinations</Link>
+            <Link href="/safaris" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Safari Types</Link>
+            <Link href="/experiences" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Experiences</Link>
+            <Link href="/journal" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Journal</Link>
+          </nav>
 
-          {/* Legal & Contact */}
-          <div>
-            <h4 className="font-sans text-xs font-bold tracking-widest uppercase mb-8">Information</h4>
-            <nav className="flex flex-col gap-4 font-sans text-sm text-fog hover:[&>a]:text-bone [&>a]:transition-colors mb-12">
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
-              <Link href="/cookies">Cookies</Link>
-            </nav>
+          <nav className="lg:col-span-2 flex flex-col gap-4" aria-label="Footer Navigation - Company">
+            <h3 className="font-sans text-[10px] uppercase tracking-[0.2em] text-copper mb-4 font-semibold">Company</h3>
+            <Link href="/about" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Our Story</Link>
+            <Link href="/contact" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Contact</Link>
+            <Link href="/terms" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Terms & Conditions</Link>
+            <Link href="/privacy" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">Privacy Policy</Link>
+          </nav>
 
-            <h4 className="font-sans text-xs font-bold tracking-widest uppercase mb-8">Connect</h4>
-            <div className="flex flex-col gap-4 font-sans text-sm text-fog">
-              <a href="mailto:enquiries@lupanoir.com" className="hover:text-bone transition-colors">email</a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition-colors">WhatsApp</a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition-colors">Instagram</a>
-            </div>
-          </div>
+          <address className="lg:col-span-2 flex flex-col gap-4 not-italic">
+            <h3 className="font-sans text-[10px] uppercase tracking-[0.2em] text-copper mb-4 font-semibold">Enquiries</h3>
+            <a href="mailto:enquiries@lupanoir.com" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">enquiries@lupanoir.com</a>
+            <a href="tel:+447700900077" className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors w-fit focus:outline-none focus:text-ivory">+44 (0) 7700 900077</a>
+            <span className="font-sans text-sm text-ivory/50 mt-4 block leading-relaxed">
+              London, United Kingdom<br />
+              Available 24/7 Worldwide
+            </span>
+          </address>
+
         </div>
 
-        {/* Bottom line */}
-        <div className="pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-            <p className="font-sans text-xs text-fog/50">
-              &copy; {new Date().getFullYear()} Lupa Noir. All rights reserved.
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8 border-t border-ivory/10">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
+            <p className="font-sans text-[10px] text-ivory/40 tracking-widest uppercase">
+              &copy; {new Date().getFullYear()} Lupa Noir.
             </p>
-            <p className="font-sans text-xs text-fog/50">
-              Designed by Theomedia
+            <p className="font-sans text-[10px] text-ivory/30 tracking-widest uppercase">
+              Design concept by Theomedia UK
             </p>
           </div>
-          <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-ember/90">
-            Wild by Nature.
-          </p>
+          
+          <div className="flex items-center gap-6">
+            <a href="#" className="font-sans text-[10px] uppercase tracking-[0.2em] text-ivory/50 hover:text-copper transition-colors focus:outline-none focus:text-copper" aria-label="Instagram">Instagram</a>
+            <a href="#" className="font-sans text-[10px] uppercase tracking-[0.2em] text-ivory/50 hover:text-copper transition-colors focus:outline-none focus:text-copper" aria-label="Journal">Journal</a>
+          </div>
         </div>
       </div>
     </footer>
