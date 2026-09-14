@@ -57,7 +57,7 @@ export default function Home() {
             {/* Destination 1 - Large Left */}
             <Link href="/destinations" className="lg:col-span-7 group relative block aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-void/5 reveal-up" aria-label="Explore Jawai, India">
               <Image 
-                src="https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=2000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1544985361-b420d7a77043?q=80&w=2000&auto=format&fit=crop" 
                 alt="Leopard resting in Jawai, India" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -78,7 +78,7 @@ export default function Home() {
               {/* Destination 2 */}
               <Link href="/destinations" className="group relative block flex-1 overflow-hidden bg-void/5 min-h-[400px] reveal-up" aria-label="Explore Maasai Mara">
                 <Image 
-                  src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1500&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1551802230-22c087b11df2?q=80&w=1500&auto=format&fit=crop" 
                   alt="Cheetahs in the Maasai Mara savannah" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -94,7 +94,7 @@ export default function Home() {
               {/* Destination 3 */}
               <Link href="/destinations" className="group relative block flex-1 overflow-hidden bg-void/5 min-h-[400px] reveal-up" aria-label="Explore Okavango Delta">
                 <Image 
-                  src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=1500&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1531208853003-c1ec1b8a81d7?q=80&w=1500&auto=format&fit=crop" 
                   alt="Elephant in the Okavango Delta" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
